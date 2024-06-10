@@ -1,0 +1,87 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "exam02",
+            "request": "launch",
+            "mainClass": "exam02",
+            "projectName": "04.02_acc8dd24"
+        },
+        {
+            "type": "java",
+            "name": "exam03",
+            "request": "launch",
+            "mainClass": "exam03",
+            "projectName": "04.02_acc8dd24"
+        },
+        {
+            "type": "java",
+            "name": "exam04",
+            "request": "launch",
+            "mainClass": "exam04",
+            "projectName": "04.02_acc8dd24"
+        },
+        {
+            "type": "java",
+            "name": "exam05",
+            "request": "launch",
+            "mainClass": "exam05",
+            "projectName": "04.02_acc8dd24"
+        },
+        {
+            "type": "java",
+            "name": "exam06",
+            "request": "launch",
+            "mainClass": "exam06",
+            "projectName": "04.02_acc8dd24"
+        },
+        {
+            "type": "java",
+            "name": "exam07",
+            "request": "launch",
+            "mainClass": "exam07",
+            "projectName": "04.02_acc8dd24"
+        },
+        {
+            "type": "java",
+            "name": "exam08",
+            "request": "launch",
+            "mainClass": "exam08",
+            "projectName": "04.02_acc8dd24"
+        },
+        {
+            "type": "java",
+            "name": "exam09",
+            "request": "launch",
+            "mainClass": "exam09",
+            "projectName": "04.02_acc8dd24"
+        },
+        {
+            "type": "java",
+            "name": "exam10",
+            "request": "launch",
+            "mainClass": "exam10",
+            "projectName": "04.02_acc8dd24"
+            "args": "10 20 30 40 50"
+        },
+        {
+            "type": "java",
+            "name": "exam10",
+            "request": "launch",
+            "mainClass": "exam10",
+            "projectName": "04.02_acc8dd24"
+            "args": "80 90 100"
+        }
+    ]
+}
