@@ -10,7 +10,7 @@ public class SimplePaint extends JFrame {
     public SimplePaint() {
         setTitle("Simple Paint");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(900, 700);
+        setSize(900, 800);
         setLocationRelativeTo(null);
 
         drawingPanel = new DrawingPanel();
@@ -117,9 +117,9 @@ class DrawingPanel extends JPanel {
             @Override
             public void mousePressed(MouseEvent e) {
                 if (eraserMode) {
-                    currentShape = new Shape(e.getPoint(), getBackground(), "Dot", currentThickness);
+                    currentShape = new Shape(e.getPoint(), getBackground(), currentShapeType, currentThickness);
                 } else {
-                    currentShape = new Shape(e.getPoint(), currentColor, "Dot", currentThickness);
+                    currentShape = new Shape(e.getPoint(), currentColor, currentShapeType, currentThickness);
                 }
                 shapes.add(currentShape);
                 repaint();
@@ -216,14 +216,12 @@ class DrawingPanel extends JPanel {
 
             switch (shapeType) {
                 case "Freehand":
-                    for (int i = 0; i < points.size() - 1; i++) {
-                        Point p1 = points.get(i);
-                        Point p2 = points.get(i + 1);
-                        g2.drawLine(p1.x, p1.y, p2.x, p2.y);
+                    for (Point point : points) {
+                        g2.fillOval(point.x - thickness / 2, point.y - thickness / 2, thickness, thickness);
                     }
                     break;
                 case "Line":
-                    g2.drawLine(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
+                    drawThickLine(g2, startPoint.x, startPoint.y, endPoint.x, endPoint.y, thickness);
                     break;
                 case "Rectangle":
                     g2.drawRect(Math.min(startPoint.x, endPoint.x), Math.min(startPoint.y, endPoint.y),
@@ -237,6 +235,11 @@ class DrawingPanel extends JPanel {
                     g2.fillOval(startPoint.x - thickness / 2, startPoint.y - thickness / 2, thickness, thickness);
                     break;
             }
+        }
+
+        private void drawThickLine(Graphics2D g2, int x1, int y1, int x2, int y2, int thickness) {
+            g2.setStroke(new BasicStroke(thickness, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+            g2.drawLine(x1, y1, x2, y2);
         }
     }
 }
